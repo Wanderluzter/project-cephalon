@@ -81,10 +81,10 @@ project_ordis/
     └── data/
         └── builds.json        # Curated build seed data
 ````
-🚀 Getting Started
+## 🚀 Getting Started
 Prerequisites
 Python 3.10+
-
+````
 pip package manager
 
 Installation
@@ -109,6 +109,7 @@ Start the Flask web application:
 Bash
 python app.py
 Open http://127.0.0.1:5000 in your browser.
+````
 
 💡 Note: app.py handles all external API calls server-side. No credentials are visible in client code, and no CORS issues occur.
 
@@ -137,7 +138,7 @@ The chat panel (Ordis // Direct Channel) includes an auto-detecting status indic
 
 ℹ️ .env is parsed automatically via a built-in loader (python-dotenv not required). Real environment variables take priority over .env entries.
 
-🛠️ Architecture & Design
+## 🛠️ Architecture & Design
 Agent Mechanics (ordis/llm.py + ordis/agent.py)
 llm.py: A lightweight client built for OpenRouter's /chat/completions API supporting standard tool/function calls. Model selection can be customized via the OPENROUTER_MODEL environment variable.
 
