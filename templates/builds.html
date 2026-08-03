@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Loadouts{% endblock %}
+{% block content %}
+
+<section class="panel panel--wide">
+  <h2 class="panel__title">Loadout Archive</h2>
+  <p class="hint" id="builds-as-of">Loading curated-data disclaimer&hellip;</p>
+  <form id="builds-form" class="terminal-form">
+    <span class="prompt">&gt;</span>
+    <input type="text" id="builds-input" placeholder="warframe designation&hellip; e.g. Rhino" autocomplete="off">
+    <button type="submit">PULL</button>
+  </form>
+  <div class="builds-results" id="builds-results">
+    <div class="hint">Curated builds are intentionally few and dated — Warframe's meta shifts every few months. Community submissions are the primary way coverage grows.</div>
+  </div>
+  <p class="hint" style="margin-top:14px;">Frames on file:</p>
+  <div id="builds-index"><span class="hint">loading&hellip;</span></div>
+</section>
+
+<section class="panel panel--wide">
+  <h2 class="panel__title">Submit a Build</h2>
+  <p class="hint">No moderation pipeline yet — submissions go straight in, tagged as community-sourced and "directional" confidence.</p>
+  <form id="submit-build-form" class="terminal-form" style="flex-direction:column; align-items:stretch; gap:10px;">
+    <input type="text" id="submit-frame" placeholder="Warframe name" autocomplete="off" style="background:var(--void); border:1px solid var(--line); color:var(--text); padding:8px; font-family:var(--font-mono);">
+    <input type="text" id="submit-name" placeholder="Build name, e.g. 'Steel Path Tank'" autocomplete="off" style="background:var(--void); border:1px solid var(--line); color:var(--text); padding:8px; font-family:var(--font-mono);">
+    <input type="text" id="submit-mods" placeholder="Mods, comma-separated" autocomplete="off" style="background:var(--void); border:1px solid var(--line); color:var(--text); padding:8px; font-family:var(--font-mono);">
+    <input type="number" id="submit-forma" placeholder="Forma count" min="0" style="background:var(--void); border:1px solid var(--line); color:var(--text); padding:8px; font-family:var(--font-mono); width:140px;">
+    <textarea id="submit-notes" placeholder="Notes (optional)" rows="2" style="background:var(--void); border:1px solid var(--line); color:var(--text); padding:8px; font-family:var(--font-body);"></textarea>
+    <button type="submit" style="align-self:flex-start; background:transparent; border:1px solid var(--gold-dim); color:var(--gold); font-family:var(--font-display); font-weight:600; padding:8px 16px; cursor:pointer;">SUBMIT</button>
+    <span id="submit-build-status" class="hint"></span>
+  </form>
+</section>
+
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/builds.js') }}"></script>
+{% endblock %}

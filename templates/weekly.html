@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Weekly Digest{% endblock %}
+{% block content %}
+
+<section class="panel panel--wide">
+  <h2 class="panel__title">Weekly Digest</h2>
+  <p class="hint">
+    Automatically regenerated once a week (checked daily in the background) — summarizes
+    the current Nightwave weekly challenges and the Steel Path weekly rotation.
+  </p>
+  {% if image_exists %}
+  <div class="weekly-image-wrap">
+    <img id="weekly-image" src="{{ url_for('static', filename='generated/weekly_digest.png') }}" alt="Weekly digest">
+  </div>
+  <p class="hint" style="margin-top:10px;">
+    Last generated {{ age_days }} day{{ 's' if age_days != 1 else '' }} ago.
+    <button id="weekly-regenerate" type="button" style="margin-left:10px;" class="chat-clear">regenerate now</button>
+    <span id="weekly-status" style="margin-left:8px;"></span>
+  </p>
+  {% else %}
+  <p class="hint">No digest generated yet — it's produced automatically shortly after the server starts, or on demand below.</p>
+  <button id="weekly-regenerate" type="button" class="chat-clear">generate now</button>
+  <span id="weekly-status" style="margin-left:8px;"></span>
+  {% endif %}
+</section>
+
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/weekly.js') }}"></script>
+{% endblock %}

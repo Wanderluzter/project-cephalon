@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Item Hunter{% endblock %}
+{% block content %}
+
+<section class="panel panel--wide">
+  <h2 class="panel__title">Item Hunter // Drop Tracker</h2>
+  <form id="hunter-form" class="terminal-form">
+    <span class="prompt">&gt;</span>
+    <input type="text" id="hunter-input" placeholder="query item designation&hellip; e.g. Voruna Prime" autocomplete="off">
+    <button type="submit">SCAN</button>
+  </form>
+  <div class="hunter-results" id="hunter-results">
+    <div class="hint">Ordis will cross-reference every known drop source (missions, void relics, bounty rewards, and more) and rank them by yield probability.</div>
+  </div>
+</section>
+
+<section class="panel panel--wide">
+  <h2 class="panel__title">Set Planner</h2>
+  <p class="hint">Groups every matching component under one set/item family, with ducat value and best farm source per piece. Can't check what you already own — no inventory access is available.</p>
+  <form id="set-form" class="terminal-form">
+    <span class="prompt">&gt;</span>
+    <input type="text" id="set-input" placeholder="set or item family&hellip; e.g. Voruna Prime" autocomplete="off">
+    <button type="submit">PLAN</button>
+  </form>
+  <div id="set-results">
+    <div class="hint">Search a set name to see every component, its ducat value, and where to farm it.</div>
+  </div>
+</section>
+
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/drops.js') }}"></script>
+{% endblock %}

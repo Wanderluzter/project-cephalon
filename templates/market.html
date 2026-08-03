@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Market{% endblock %}
+{% block content %}
+
+<section class="panel panel--wide">
+  <h2 class="panel__title">Market Relay</h2>
+  <form id="market-form" class="terminal-form">
+    <span class="prompt">&gt;</span>
+    <input type="text" id="market-input" placeholder="search tradable item&hellip;" autocomplete="off">
+    <button type="submit">QUERY</button>
+  </form>
+  <div class="market-results" id="market-results">
+    <div class="hint">Live platinum pricing only — current sell orders on Warframe Market, no historical averages mixed in.</div>
+  </div>
+</section>
+
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/market.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Worldstate{% endblock %}
+{% block content %}
+<div id="ws-error" class="error-text" style="grid-column:1/-1;"></div>
+
+<section class="panel"><h2 class="panel__title">Server Status</h2><div id="ws-server-status"><div class="loading">Pinging platforms&hellip;</div></div></section>
+<section class="panel"><h2 class="panel__title">Open World Cycles</h2><div id="ws-cycles"><div class="loading">Linking&hellip;</div></div></section>
+<section class="panel"><h2 class="panel__title">Sortie</h2><div id="ws-sortie"><div class="loading">Linking&hellip;</div></div></section>
+<section class="panel"><h2 class="panel__title">Archon Hunt</h2><div id="ws-archon"><div class="loading">Linking&hellip;</div></div></section>
+<section class="panel"><h2 class="panel__title">Nightwave</h2><div id="ws-nightwave"><div class="loading">Linking&hellip;</div></div></section>
+<section class="panel"><h2 class="panel__title">Traders</h2><div id="ws-traders"><div class="loading">Linking&hellip;</div></div></section>
+<section class="panel"><h2 class="panel__title">Arbitration</h2><div id="ws-arbitration"><div class="loading">Linking&hellip;</div></div></section>
+<section class="panel"><h2 class="panel__title">Teshin Rotation</h2><div id="ws-steelpath"><div class="loading">Linking&hellip;</div></div></section>
+<section class="panel"><h2 class="panel__title">Darvo's Deals</h2><div id="ws-deals"><div class="loading">Linking&hellip;</div></div></section>
+<section class="panel"><h2 class="panel__title">Flash Sales</h2><div id="ws-flashsales"><div class="loading">Linking&hellip;</div></div></section>
+<section class="panel"><h2 class="panel__title">Invasions</h2><div id="ws-invasions"><div class="loading">Linking&hellip;</div></div></section>
+<section class="panel"><h2 class="panel__title">Conclave Challenges</h2><div id="ws-conclave"><div class="loading">Linking&hellip;</div></div></section>
+<section class="panel"><h2 class="panel__title">Archimedea</h2><div id="ws-archimedeas"><div class="loading">Linking&hellip;</div></div></section>
+<section class="panel"><h2 class="panel__title">Misc</h2><div id="ws-misc"><div class="loading">Linking&hellip;</div></div></section>
+<section class="panel panel--wide"><h2 class="panel__title">Weekly Trackers (1999 Calendar, Weekly Challenges, Clan Initiative, Kuva)</h2><div id="ws-weekly"><div class="loading">Linking&hellip;</div></div></section>
+<section class="panel panel--wide"><h2 class="panel__title">Void Fissures</h2><div id="ws-fissures"><div class="loading">Linking&hellip;</div></div></section>
+<section class="panel panel--wide"><h2 class="panel__title">Recent News</h2><div id="ws-news"><div class="loading">Linking&hellip;</div></div></section>
+
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/worldstate.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,63 @@
+{
+  "_meta": {
+    "as_of": "2026-07-31",
+    "warning": "Warframe's meta shifts every few months (new frames, new Arcane systems, weapon rework waves like Incarnon Genesis). This seed is intentionally small and general-direction rather than exhaustive — see README for why. Treat 'confidence: directional' entries as a starting point to verify, not a finished optimal build.",
+    "source_note": "Mod/ability direction synthesized from general Warframe knowledge and a July 2026 web search across multiple independent tier-list/build-guide sites; no single build list was copied verbatim from any source."
+  },
+  "builds": [
+    {
+      "frame": "Rhino",
+      "name": "Iron Skin Tank",
+      "mods": ["Vitality", "Steel Fiber", "Intensify", "Adaptation", "Umbral Fiber", "Umbral Vitality", "Rage", "Continuity"],
+      "forma_count": 4,
+      "notes": "Iron Skin absorbs damage scaling with armor and Ability Strength; this fundamental hasn't changed in years. Long-stable pick for a first Steel Path tank.",
+      "confidence": "high",
+      "source": "curated"
+    },
+    {
+      "frame": "Volt",
+      "name": "Speed / Shield Support",
+      "mods": ["Streamline", "Stretch", "Intensify", "Continuity", "Efficiency", "Transistor Shock"],
+      "forma_count": 3,
+      "notes": "Squad speed buff plus Shock/Discharge utility. Core loop is unchanged structurally, but check current Arcane options — Arcane slotting for exalted/ability builds expanded significantly in 2026 and may be worth pairing here.",
+      "confidence": "high",
+      "source": "curated"
+    },
+    {
+      "frame": "Saryn",
+      "name": "Spores / Miasma Nuke",
+      "mods": ["Stretch", "Overextended", "Intensify", "Fleeting Expertise", "Streamline", "Continuity"],
+      "forma_count": 4,
+      "notes": "Range + Strength focused so Spores procs spread and Miasma's armor strip covers a wide area. Multiple independent 2026 sources still rank Saryn S-tier for this exact loop, unusually stable pick despite several balance passes over the years.",
+      "confidence": "high",
+      "source": "curated"
+    },
+    {
+      "frame": "Mesa",
+      "name": "Peacemaker Exalted Crit",
+      "mods": ["Vitality", "Steel Fiber", "Streamline", "Continuity", "Adaptation"],
+      "forma_count": 4,
+      "notes": "2026 sources consistently point to Mesa's exalted secondary benefiting heavily from weapon-slot Arcanes now — that part of her kit is Arcane-dependent enough that I'd verify current Arcane options before finalizing rather than trust an exact mod list from me.",
+      "confidence": "directional",
+      "source": "curated"
+    },
+    {
+      "frame": "Wisp",
+      "name": "Reservoirs Support",
+      "mods": ["Continuity", "Intensify", "Streamline", "Stretch"],
+      "forma_count": 3,
+      "notes": "Squad-wide buff reservoirs (health/speed/damage) plus strong mobility and self-survivability. Consistently ranked as a top support pick through 2026 — role and core kit are stable, exact mod slots less critical than getting all three reservoir types down.",
+      "confidence": "high",
+      "source": "curated"
+    },
+    {
+      "frame": "Dante",
+      "name": "Overguard Nuke/Support",
+      "mods": ["Continuity", "Constitution", "Intensify", "Stretch"],
+      "forma_count": 5,
+      "notes": "2026 sources describe Dante as reshaping squad play via Overguard generation, built around Ability Strength and Duration, and note he performs well without needing Helminth changes. I have lower confidence in the exact mod slots here than the notes suggest for the ability direction — Dante released after my training cutoff, so verify this one more than the others.",
+      "confidence": "directional",
+      "source": "curated"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}Overview{% endblock %}
+{% block content %}
+
+<section class="panel">
+  <h2 class="panel__title">Open World Cycles</h2>
+  <div class="cycle-list" id="cycles"><div class="loading">Establishing link&hellip;</div></div>
+</section>
+
+<section class="panel">
+  <h2 class="panel__title">Active Operations</h2>
+  <div class="world-list" id="world-state"><div class="loading">Querying relay&hellip;</div></div>
+  <div class="hint" style="margin-top:10px;"><a href="{{ url_for('page_worldstate') }}" style="color:var(--cyan);">Full worldstate &rarr;</a></div>
+</section>
+
+<section class="panel">
+  <h2 class="panel__title">Item Hunter // Drop Tracker</h2>
+  <form id="hunter-form" class="terminal-form">
+    <span class="prompt">&gt;</span>
+    <input type="text" id="hunter-input" placeholder="query item designation&hellip;" autocomplete="off">
+    <button type="submit">SCAN</button>
+  </form>
+  <div class="hunter-results" id="hunter-results">
+    <div class="hint">Ordis will cross-reference every known drop source and rank them by yield probability.</div>
+  </div>
+  <div class="hint" style="margin-top:10px;"><a href="{{ url_for('page_drops') }}" style="color:var(--cyan);">Full item hunter &rarr;</a></div>
+</section>
+
+<section class="panel">
+  <h2 class="panel__title">Market Relay</h2>
+  <form id="market-form" class="terminal-form">
+    <span class="prompt">&gt;</span>
+    <input type="text" id="market-input" placeholder="search tradable item&hellip;" autocomplete="off">
+    <button type="submit">QUERY</button>
+  </form>
+  <div class="market-results" id="market-results">
+    <div class="hint">Live platinum pricing via the Warframe Market relay.</div>
+  </div>
+  <div class="hint" style="margin-top:10px;"><a href="{{ url_for('page_market') }}" style="color:var(--cyan);">Full market relay &rarr;</a></div>
+</section>
+
+<section class="panel">
+  <h2 class="panel__title">Archive // Lore Terminal</h2>
+  <form id="lore-form" class="terminal-form">
+    <span class="prompt">&gt;</span>
+    <input type="text" id="lore-input" placeholder="query subject&hellip;" autocomplete="off">
+    <button type="submit">RECALL</button>
+  </form>
+  <div class="lore-output" id="lore-output"><p class="hint">Operator, ask and I will recall what the Archive holds.</p></div>
+</section>
+
+<section class="panel">
+  <h2 class="panel__title">Loadout Archive</h2>
+  <form id="builds-form" class="terminal-form">
+    <span class="prompt">&gt;</span>
+    <input type="text" id="builds-input" placeholder="warframe designation&hellip;" autocomplete="off">
+    <button type="submit">PULL</button>
+  </form>
+  <div class="builds-results" id="builds-results"><div class="hint">Curated loadouts.</div></div>
+  <div class="hint" style="margin-top:10px;"><a href="{{ url_for('page_builds') }}" style="color:var(--cyan);">Full loadout archive &rarr;</a></div>
+</section>
+
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/overview.js') }}"></script>
+{% endblock %}

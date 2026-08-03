@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Archive{% endblock %}
+{% block content %}
+
+<section class="panel panel--wide">
+  <h2 class="panel__title">Archive // Lore Terminal</h2>
+  <form id="lore-form" class="terminal-form">
+    <span class="prompt">&gt;</span>
+    <input type="text" id="lore-input" placeholder="query subject&hellip; e.g. Rhino, Story and History" autocomplete="off">
+    <button type="submit">RECALL</button>
+  </form>
+  <div class="lore-output" id="lore-output"><p class="hint">Operator, ask and I will recall what the Archive holds.</p></div>
+</section>
+
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/lore.js') }}"></script>
+{% endblock %}

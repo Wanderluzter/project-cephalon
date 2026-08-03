@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}ORDIS{% endblock %} // Operator Interface</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Titillium+Web:wght@400;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<script>
+  // Applied synchronously before paint so switching themes doesn't flash
+  // the default theme first. Kept inline (not in common.js) specifically
+  // for this timing reason.
+  (function () {
+    var saved = localStorage.getItem('ordis_theme');
+    if (saved && saved !== 'og') document.documentElement.setAttribute('data-theme', saved);
+  })();
+</script>
+</head>
+<body>
+
+<div class="scanlines"></div>
+
+<header class="ordis-header">
+  <div class="ordis-eye">
+    <div class="ordis-eye__ring"></div>
+    <div class="ordis-eye__ring ordis-eye__ring--outer"></div>
+    <div class="ordis-eye__core"></div>
+  </div>
+  <div class="ordis-title">
+    <h1>ORDIS</h1>
+    <p class="ordis-subtitle">Cephalon-class interface &mdash; Origin System status link <span id="link-status" class="status-dot status-dot--ok"></span></p>
+  </div>
+  <div class="theme-switcher" role="group" aria-label="Theme">
+    <button type="button" class="theme-btn" data-theme-choice="og" title="OG theme (Orokin gold/cyan)">OG</button>
+    <button type="button" class="theme-btn" data-theme-choice="kim" title="KIM theme (Hex/1999)">KIM</button>
+  </div>
+  <button type="button" id="chat-restore" class="theme-btn" title="Show ORDIS chat" hidden>+ Chat</button>
+  <div class="ordis-time" id="clock">--:--:--</div>
+</header>
+
+<nav class="ordis-nav">
+  <a href="{{ url_for('page_overview') }}" class="{{ 'active' if active_page == 'overview' else '' }}">Overview</a>
+  <a href="{{ url_for('page_worldstate') }}" class="{{ 'active' if active_page == 'worldstate' else '' }}">Worldstate</a>
+  <a href="{{ url_for('page_drops') }}" class="{{ 'active' if active_page == 'drops' else '' }}">Item Hunter</a>
+  <a href="{{ url_for('page_market') }}" class="{{ 'active' if active_page == 'market' else '' }}">Market</a>
+  <a href="{{ url_for('page_rivens') }}" class="{{ 'active' if active_page == 'rivens' else '' }}">Rivens</a>
+  <a href="{{ url_for('page_lore') }}" class="{{ 'active' if active_page == 'lore' else '' }}">Archive</a>
+  <a href="{{ url_for('page_builds') }}" class="{{ 'active' if active_page == 'builds' else '' }}">Loadouts</a>
+  <a href="{{ url_for('page_weekly') }}" class="{{ 'active' if active_page == 'weekly' else '' }}">Weekly Digest</a>
+</nav>
+
+<main class="grid">
+{% block content %}{% endblock %}
+</main>
+
+{% include "chat_widget.html" %}
+
+<script src="{{ url_for('static', filename='common.js') }}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

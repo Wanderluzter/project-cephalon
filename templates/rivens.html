@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Rivens{% endblock %}
+{% block content %}
+
+<section class="panel panel--wide">
+  <h2 class="panel__title">Riven Auctions</h2>
+  <p class="hint">
+    Live riven mod auctions from Warframe Market. Note: this targets the market's older
+    v1 API — v2 doesn't have riven/auction support yet (see the project README).
+  </p>
+  <form id="riven-form" class="terminal-form">
+    <span class="prompt">&gt;</span>
+    <input type="text" id="riven-input" placeholder="weapon name&hellip; e.g. War, Braton Prime" autocomplete="off">
+    <select id="riven-sort" style="background:var(--void); color:var(--text); border:1px solid var(--line); font-family:var(--font-mono); padding:6px;">
+      <option value="price_asc">cheapest first</option>
+      <option value="price_desc">priciest first</option>
+    </select>
+    <button type="submit">SCAN</button>
+  </form>
+  <div class="hunter-results" id="riven-results">
+    <div class="hint">Search a weapon to see live riven auctions, ranked by price.</div>
+  </div>
+</section>
+
+<section class="panel panel--wide">
+  <h2 class="panel__title">Kuva Lich / Sister of Parvos Auctions</h2>
+  <form id="lich-form" class="terminal-form">
+    <span class="prompt">&gt;</span>
+    <input type="text" id="lich-weapon" placeholder="weapon (optional)&hellip; e.g. Kuva Kraken" autocomplete="off">
+    <input type="text" id="lich-element" placeholder="element (optional)&hellip; e.g. toxin" autocomplete="off">
+    <label style="display:flex; align-items:center; gap:6px; font-size:12px; color:var(--text-dim);">
+      <input type="checkbox" id="lich-ephemera"> has ephemera
+    </label>
+    <button type="submit">SCAN</button>
+  </form>
+  <div class="hunter-results" id="lich-results">
+    <div class="hint">Search to see live Lich/Sister weapon auctions with rolled damage, element, and ephemera.</div>
+  </div>
+</section>
+
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/rivens.js') }}"></script>
+{% endblock %}

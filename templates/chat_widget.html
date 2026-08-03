@@ -1,0 +1,27 @@
+<div id="chat-widget" class="chat-widget">
+  <button id="chat-toggle" class="chat-toggle" type="button" aria-expanded="false" title="Toggle chat (press / to open, Esc to close)">
+    <span class="chat-toggle__label">ORDIS</span>
+    <span id="chat-toggle-status" class="status-dot"></span>
+  </button>
+
+  <div id="chat-drawer" class="chat-drawer" hidden>
+    <div class="chat-drawer__header">
+      <span>Direct Channel <span id="chat-status-badge" class="status-dot"></span></span>
+      <span class="chat-drawer__header-actions">
+        <button id="chat-clear" class="chat-clear" type="button" title="Clear conversation">clear</button>
+        <button id="chat-hide" class="chat-clear" type="button" title="Hide chat completely (restore it from the nav)">hide</button>
+      </span>
+    </div>
+    <div class="chat-log" id="chat-log">
+      <div class="chat-bubble chat-bubble--ordis">
+        <div class="chat-bubble__author">ORDIS</div>
+        <div class="chat-bubble__text">Operator. Ask me anything — where to farm a part, what's active right now, market prices, lore. I will not guess; I will check.</div>
+      </div>
+    </div>
+    <form id="chat-form" class="terminal-form">
+      <span class="prompt">&gt;</span>
+      <input type="text" id="chat-input" placeholder="e.g. where can I farm Voruna Prime?" autocomplete="off">
+      <button type="submit">SEND</button>
+    </form>
+  </div>
+</div>
